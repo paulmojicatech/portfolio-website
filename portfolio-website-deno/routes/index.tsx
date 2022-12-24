@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Paul Mojica Technologies</title>
       </Head>
-      <div style="background-image: url('./charlotte.jpg'); background-size: cover; width: 100vw; background-repeat: no-repeat; height: 100vh;">
+      <div class="bg-clt bg-cover w-[100vw] bg-no-repeat h-[100vh]">
         <Header />
         <HomeAbout />
       </div>
