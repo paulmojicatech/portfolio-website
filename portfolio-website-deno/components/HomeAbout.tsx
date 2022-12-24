@@ -8,7 +8,7 @@ export function HomeAbout() {
                 <div class="w-full p-4 text-center"><a class="text-blue-900" href="/about">A little more about me.</a></div>
             </div>
             
-            <div class="lg:flex-col bg-[#ffffff75] m-4 rounded-md ">
+            <div class="hidden lg:flex flex-col bg-[#ffffff75] m-4 rounded-md ">
                 <img class="m-auto" src="./Paul_Mojica.png" />
                 <p class="m-3 text-justify">{HOME_ABOUT}</p>
                 <div class="w-full p-4 text-center"><a class="text-blue-900" href="/about">A little more about me.</a></div>

@@ -11,7 +11,17 @@ export function RecentActivity({blogs}) {
                     <>
                     <div class="flex flex-col">
                         <img src={blog.socialImage} />
-                        <div class="grid grid-cols-6 grid-rows-3">
+                        <div class="flex flex-col lg:hidden">
+                            <h3 class="font-bold">Title</h3>
+                            <div>{blog.title}</div>
+                            <h3 class="font-bold">Created</h3>
+                            <div>{blog.createdDate.toLocaleDateString()}</div>
+                            <div>
+                                <h3 class="font-bold">Description</h3>
+                                <div>{blog.description}</div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:grid lg:grid-cols-6 lg:grid-rows-3">
                             <h3 class="font-bold ml-[3rem] mr-[2rem]">Title</h3>
                             <div class="col-span-5">{blog.title}</div>
                             <h3 class="font-bold ml-[3rem] mr-[2rem] w-[7rem]">Created</h3>

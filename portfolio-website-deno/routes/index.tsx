@@ -38,14 +38,17 @@ export default function Home({data}){
       </Head>
       <div class="bg-clt bg-cover w-[100vw] bg-no-repeat h-[100vh]">
         <Header />
-        <div class="flex inline-flex items-center justify-around">
-          <div class="w-[30%]">
+        <div class="flex flex-col h-[80vh] overflow-scroll lg:hidden">
+          <HomeAbout />
+          <RecentActivity blogs={data} />
+        </div>
+        <div class="hidden lg:flex inline-flex items-center justify-around">
+          <div class="hidden lg:w-[30%] lg:block">
             <HomeAbout />
           </div>
-          <div class="m-4">
+          <div class="hidden lg:block m-4">
             <RecentActivity blogs={data}  />
           </div>
-          
           
         </div>
         
