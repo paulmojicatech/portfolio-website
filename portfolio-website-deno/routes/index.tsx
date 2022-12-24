@@ -38,7 +38,7 @@ export default function Home({data}){
       </Head>
       <div class="bg-clt bg-cover w-[100vw] bg-no-repeat h-[100vh]">
         <Header />
-        <div class="flex flex-col h-[80vh] overflow-scroll lg:hidden">
+        <div class="flex flex-col h-[80vh] overflow-scroll ml-4 mr-4 lg:hidden">
           <HomeAbout />
           <RecentActivity blogs={data} />
         </div>

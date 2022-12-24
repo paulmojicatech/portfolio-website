@@ -3,7 +3,7 @@ import { useState } from 'preact/hooks';
 export default function MobileMenu() {
     const [showMenu, setShowMenu] = useState(false);
    return (
-        <section class="absolute right-[2rem] top-[4.5rem]">
+        <section class="absolute right-[2rem] top-[1.5rem]">
             <button onClick={() => setShowMenu(!showMenu)}>
                 <div class="space-y-2">
                 <div class="w-8 h-0.5 bg-gray-600"></div>
