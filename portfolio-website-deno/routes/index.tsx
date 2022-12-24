@@ -5,14 +5,14 @@ import { HomeAbout } from "../components/HomeAbout.tsx";
 import { RecentActivity } from "../components/RecentActivity.tsx";
 import {Blog} from '../models/blog.interface.ts'
 
-export const handler: Handlers<Blog | null> = {
-  async GET(_, ctx): Promise<Blog[] | null> {
+export const handler: Handlers<Promise<Blog[]>> = {
+  async GET(_: Request, ctx: any): Promise<Response> {
       const url = 'https://dev.to/api/articles?username=paulmojicatech';
       const resp = await fetch(url);
       if (resp.status !== 200) {
           return ctx.render(null);
       }
-      const blogs: Blog[] = (await resp.json()).map(blog => {
+      const blogs: Blog[] = (await resp.json()).map((blog: any) => {
         return {
           id: blog.id,
           title: blog.title,
@@ -27,10 +27,6 @@ export const handler: Handlers<Blog | null> = {
 }
 
 export default function Home({data}){
-  if (!data) {
-    return <div>Oh no!</div>
-  }
-  
   return (
     <>
       <Head>
