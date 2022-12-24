@@ -4,7 +4,7 @@ import MobileMenu from "../islands/MobileMenu.tsx";
 export function Header() {
     
     return (
-        <div class="inline-flex justify-between items-center h-40 w-full bg-[#ffffff10] pl-2">
+        <div class="inline-flex justify-between items-center h-[10vh] w-full bg-[#ffffff10] pl-2">
             <h1 class="text-white font-bold text-2xl">Paul Mojica Technologies</h1>
             <div class="flex-col justify-self-end pr-2 md:hidden">
                 <MobileMenu />

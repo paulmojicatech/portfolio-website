@@ -1,8 +1,35 @@
 import { Head } from "$fresh/runtime.ts";
+import { Handlers } from '$fresh/server.ts'
 import { Header } from "../components/Header.tsx";
 import { HomeAbout } from "../components/HomeAbout.tsx";
+import { RecentActivity } from "../components/RecentActivity.tsx";
+import {Blog} from '../models/blog.interface.ts'
 
-export default function Home() {
+export const handler: Handlers<Blog | null> = {
+  async GET(_, ctx): Promise<Blog[] | null> {
+      const url = 'https://dev.to/api/articles?username=paulmojicatech';
+      const resp = await fetch(url);
+      if (resp.status !== 200) {
+          return ctx.render(null);
+      }
+      const blogs: Blog[] = (await resp.json()).map(blog => {
+        return {
+          id: blog.id,
+          title: blog.title,
+          createdDate: new Date(blog.created_at),
+          url: blog.url,
+          description: blog.description,
+          socialImage: blog.social_image
+        }
+      });
+      return ctx.render(blogs);
+  }
+}
+
+export default function Home({data}){
+  if (!data) {
+    return <div>Oh no!</div>
+  }
   
   return (
     <>
@@ -11,7 +38,17 @@ export default function Home() {
       </Head>
       <div class="bg-clt bg-cover w-[100vw] bg-no-repeat h-[100vh]">
         <Header />
-        <HomeAbout />
+        <div class="flex inline-flex items-center justify-around">
+          <div class="w-[30%]">
+            <HomeAbout />
+          </div>
+          <div class="m-4">
+            <RecentActivity blogs={data}  />
+          </div>
+          
+          
+        </div>
+        
       </div>
     </>
   );
