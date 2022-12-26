@@ -14,7 +14,11 @@ export default function MobileMenu() {
         {
             showMenu && (
                 <div class="p-4 absolute right-[0] top-[2rem] bg-white rounded">
-                    <div class="mb-2">About</div>
+                    <div class="mb-2">
+                        <a href="/about">
+                            About
+                        </a>
+                    </div>
                     <div class="mb-2">Blogs</div>
                     <div class="mb-2">Videos</div>
                     <div>Projects</div>
