@@ -15,9 +15,11 @@ export function Header() {
                 <span class="p-2">
                     <a href='/about'>About</a>
                 </span>
-                <span class="p-2">Blogs</span>
+                {/* <span class="p-2">
+                    <a href='/blog'>Blogs</a>
+                </span>
                 <span class="p-2">Videos</span>
-                <span class="p-2">Projects</span>
+                <span class="p-2">Projects</span> */}
             </div>
         </div>  
     );

@@ -19,7 +19,9 @@ export default function MobileMenu() {
                             About
                         </a>
                     </div>
-                    <div class="mb-2">Blogs</div>
+                    <div class="mb-2">
+                        <a href='/blog'>Blogs</a>
+                    </div>
                     <div class="mb-2">Videos</div>
                     <div>Projects</div>
                 </div>
