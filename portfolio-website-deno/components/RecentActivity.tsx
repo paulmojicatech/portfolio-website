@@ -5,12 +5,12 @@ export function RecentActivity({blogs}) {
         filteredBlogs.push(blogs[i]);
     }
     return (
-        <div class="bg-white rounded p-4 overflow-scroll h-[85vh]">
+        <div class="bg-white rounded m-4 p-4 overflow-scroll h-[85vh]">
             { filteredBlogs.map(blog => {
                 return (
                     <>
                     <div class="flex flex-col">
-                        <img src={blog.socialImage} />
+                        <a href={blog.url} target="_blank"><img src={blog.socialImage} /></a>
                         <div class="flex flex-col lg:hidden">
                             <h3 class="font-bold">Title</h3>
                             <div>{blog.title}</div>

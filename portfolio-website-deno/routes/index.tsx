@@ -7,6 +7,7 @@ import {Blog} from '../models/blog.interface.ts'
 
 export const handler: Handlers<Promise<Blog[]>> = {
   async GET(_: Request, ctx: any): Promise<Response> {
+      // dev.to
       const url = 'https://dev.to/api/articles?username=paulmojicatech';
       const resp = await fetch(url);
       if (resp.status !== 200) {

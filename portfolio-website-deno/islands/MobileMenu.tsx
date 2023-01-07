@@ -19,11 +19,11 @@ export default function MobileMenu() {
                             About
                         </a>
                     </div>
-                    <div class="mb-2">
+                    {/* <div class="mb-2">
                         <a href='/blog'>Blogs</a>
                     </div>
                     <div class="mb-2">Videos</div>
-                    <div>Projects</div>
+                    <div>Projects</div> */}
                 </div>
             )
         }
